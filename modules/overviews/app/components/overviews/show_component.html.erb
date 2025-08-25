@@ -3,5 +3,8 @@
     grid.with_area(:description, tag: :div) do
       render(Overviews::Widgets::DescriptionComponent.new(@project))
     end
+    grid.with_area(:subitems, tag: :div) do
+      render(Overviews::Widgets::SubitemsComponent.new(@project))
+    end
   end
 %>
