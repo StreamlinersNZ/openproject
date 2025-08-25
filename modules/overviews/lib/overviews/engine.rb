@@ -36,7 +36,7 @@ module Overviews
       ::Redmine::MenuManager.map(:project_menu) do |menu|
         menu.push(:overview,
                   { controller: "/overviews/overviews", action: "show" },
-                  caption: :"overviews.label",
+                  caption: ->(project) { I18n.t("overviews.label_home", workspace_type: project.workspace_label) },
                   first: true,
                   icon: "info")
       end
@@ -47,7 +47,8 @@ module Overviews
         OpenProject::AccessControl.permission(:view_project)
           .controller_actions
           .push(
-            "overviews/overviews/show"
+            "overviews/overviews/show",
+            "overviews/overviews/dashboard"
           )
 
         OpenProject::AccessControl.permission(:view_project_attributes)

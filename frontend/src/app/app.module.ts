@@ -53,7 +53,6 @@ import { OpenprojectDashboardsModule } from 'core-app/features/dashboards/openpr
 import {
   OpenprojectWorkPackageGraphsModule,
 } from 'core-app/shared/components/work-package-graphs/openproject-work-package-graphs.module';
-import { OpenprojectOverviewModule } from 'core-app/features/overview/openproject-overview.module';
 import { OpenprojectMyPageModule } from 'core-app/features/my-page/openproject-my-page.module';
 import { KeyboardShortcutService } from 'core-app/shared/directives/a11y/keyboard-shortcut.service';
 import { CopyToClipboardService } from 'core-app/shared/components/copy-to-clipboard/copy-to-clipboard.service';
@@ -206,6 +205,7 @@ import {
 } from 'core-app/shared/components/datepicker/wp-date-picker-modal/wp-date-picker-instance.component';
 import { OpInviteUserModalAugmentService } from 'core-app/features/invite-user-modal/invite-user-modal-augment.service';
 import { TimeEntryTimerService } from 'core-app/shared/components/time_entries/services/time-entry-timer.service';
+import { OverviewComponent } from 'core-app/features/overview/overview.component';
 
 export function initializeServices(injector:Injector) {
   return () => {
@@ -304,9 +304,6 @@ export function runBootstrap(appRef:ApplicationRef) {
 
     // Dashboards
     OpenprojectDashboardsModule,
-
-    // Overview
-    OpenprojectOverviewModule,
 
     // MyPage
     OpenprojectMyPageModule,
@@ -427,5 +424,6 @@ export class OpenProjectModule implements DoBootstrap {
     registerCustomElement('opce-homescreen-new-features-block', HomescreenNewFeaturesBlockComponent, { injector });
     registerCustomElement('opce-zen-mode-toggle-button', ZenModeButtonComponent, { injector });
     registerCustomElement('opce-colors-autocompleter', ColorsAutocompleterComponent, { injector });
+    registerCustomElement('opce-overview', OverviewComponent, { injector });
   }
 }
