@@ -64,6 +64,7 @@ module WorkPackages
 
         def container_classes
           [].tap do |classes|
+            classes << "asdfasdf comment-#{journal.id}"
             if journal.internal?
               classes << "work-packages-activities-tab-journals-item-component--container__internal-comment"
             end

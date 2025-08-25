@@ -15,7 +15,8 @@
                 "anchor-activity-id": journal.sequence_version,
                 "anchor-comment-id": journal.id
               },
-              classes: container_classes
+              classes: container_classes,
+              id: "comment-#{journal.id}"
             )
           ) do |border_box_component|
             border_box_component.with_header(
