@@ -1,0 +1,7 @@
+<%=
+  grid_layout("op-portfolio-overview", tag: :div, align_items: :flex_start) do |grid|
+    grid.with_area(:description, tag: :div) do
+      render(Overviews::Widgets::DescriptionComponent.new(@project))
+    end
+  end
+%>
